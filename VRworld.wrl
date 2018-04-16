@@ -1,0 +1,387 @@
+#VRML V2.0 utf8
+
+DEF Floor Transform {
+  translation 0 0 -0.5
+  children Shape {
+    appearance Appearance {
+      textureTransform TextureTransform {
+        scale 256 256
+      }
+      texture ImageTexture {
+        url "*sl3dlib\objects\Textures\General\Checker.png" 
+      }
+      material Material {
+        diffuseColor 0.4 0.4 0.4
+        ambientIntensity 0.1
+      }
+    }
+    geometry Box {
+      size 300 300 1
+    }
+  }
+}
+Background {
+  skyColor 0.2 1 1
+  groundColor 0 0.8 0
+}
+DEF Default Viewpoint {
+  position 0 -5 3
+  orientation 1 0 0 1.1
+}
+DEF Car Transform {
+  children [
+    DEF CM Transform {
+      translation 0 0 0.35
+      children Shape {
+        appearance Appearance {
+          material Material {
+          }
+        }
+        geometry Box {
+          size 1.5 1 0.2
+        }
+      }
+    }
+    DEF Angled_camera Viewpoint {
+      description "Angled view"
+      position 4 -5 3
+      orientation 0.808479 0.294262 0.509677 1.24028
+    }
+    DEF Chase_camera Viewpoint {
+      description "Chase view"
+      position -5 0 3
+      orientation 0.447214 -0.447214 -0.774597 1.82348
+    }
+    DEF Wheel_FL Transform {
+      translation 1.4 0.85 0.254
+      rotation 0 1 0 0
+      children DEF Steering_FL Transform {
+        children [
+          DEF Wheel_FL_rot Transform {
+            children Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url "*sl3dlib\objects\Textures\General\Checker.png" 
+                }
+              }
+              geometry Cylinder {
+                radius 0.254
+                height 0.2
+              }
+            }
+          }
+          DEF Triad_FL Transform {
+            translation 0 0 0.5
+            children [
+              DEF X_axis_FL Transform {
+                translation 0 -0.5 0
+                scaleOrientation 0 0 1 1.5708
+                rotation 0 0 1 1.5708
+                center 0 0.5 0
+                children Shape {
+                  appearance Appearance {
+                    material Material {
+                      emissiveColor 1 0 0
+                      diffuseColor 1 0 0
+                    }
+                  }
+                  geometry DEF Triad_FL_X Cylinder {
+                    radius 0.02
+                    height 1
+                  }
+                }
+              }
+              DEF Y_axis_FL Transform {
+                translation 0 0.5 0
+                center 0 -0.5 0
+                children Shape {
+                  appearance Appearance {
+                    material Material {
+                      emissiveColor 0 1 0
+                      diffuseColor 0 1 0
+                    }
+                  }
+                  geometry DEF Triad_FL_Y Cylinder {
+                    radius 0.02
+                    height 1
+                  }
+                }
+              }
+              DEF Z_axis_FL Transform {
+                translation 0 0.5 0
+                scaleOrientation 1 0 0 1.5708
+                rotation 1 0 0 1.5708
+                center 0 -0.5 0
+                children Shape {
+                  appearance Appearance {
+                    material Material {
+                      emissiveColor 0 0 1
+                      diffuseColor 0 0 1
+                    }
+                  }
+                  geometry DEF Triad_FL_Z_0001 Cylinder {
+                    radius 0.02
+                    height 1
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    DEF Wheel_FR Transform {
+      translation 1.4 -0.85 0.254
+      rotation 0 1 0 0
+      children DEF Steering_FR Transform {
+        children [
+          DEF Wheel_FR_rot Transform {
+            children Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url "*sl3dlib\objects\Textures\General\Checker.png" 
+                }
+              }
+              geometry Cylinder {
+                radius 0.254
+                height 0.2
+              }
+            }
+          }
+          DEF Triad_FR Transform {
+            translation 0 0 0.5
+            children [
+              DEF X_axis_FR Transform {
+                translation 0 -0.5 0
+                scaleOrientation 0 0 1 1.5708
+                rotation 0 0 1 1.5708
+                center 0 0.5 0
+                children Shape {
+                  appearance Appearance {
+                    material Material {
+                      emissiveColor 1 0 0
+                      diffuseColor 1 0 0
+                    }
+                  }
+                  geometry DEF Triad_FL_X_0001 Cylinder {
+                    radius 0.02
+                    height 1
+                  }
+                }
+              }
+              DEF Y_axis_FR Transform {
+                translation 0 0.5 0
+                center 0 -0.5 0
+                children Shape {
+                  appearance Appearance {
+                    material Material {
+                      emissiveColor 0 1 0
+                      diffuseColor 0 1 0
+                    }
+                  }
+                  geometry DEF Triad_FL_Y_0001 Cylinder {
+                    radius 0.02
+                    height 1
+                  }
+                }
+              }
+              DEF Z_axis_FR Transform {
+                translation 0 0.5 0
+                scaleOrientation 1 0 0 1.5708
+                rotation 1 0 0 1.5708
+                center 0 -0.5 0
+                children Shape {
+                  appearance Appearance {
+                    material Material {
+                      emissiveColor 0 0 1
+                      diffuseColor 0 0 1
+                    }
+                  }
+                  geometry DEF Triad_FL_Z_0002 Cylinder {
+                    radius 0.02
+                    height 1
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    DEF Wheel_RL Transform {
+      translation -1.345 0.842 0.254
+      rotation 0 1 0 0
+      children [
+        DEF Wheel_RL_rot Transform {
+          children Shape {
+            appearance Appearance {
+              texture ImageTexture {
+                url "*sl3dlib\objects\Textures\General\Checker.png" 
+              }
+            }
+            geometry Cylinder {
+              radius 0.254
+              height 0.2
+            }
+          }
+        }
+        DEF Triad_RL Transform {
+          translation 0 0 0.5
+          children [
+            DEF X_axis_RL Transform {
+              translation 0 -0.5 0
+              scaleOrientation 0 0 1 1.5708
+              rotation 0 0 1 1.5708
+              center 0 0.5 0
+              children Shape {
+                appearance Appearance {
+                  material Material {
+                    emissiveColor 1 0 0
+                    diffuseColor 1 0 0
+                  }
+                }
+                geometry DEF Triad_FL_X_0002 Cylinder {
+                  radius 0.02
+                  height 1
+                }
+              }
+            }
+            DEF Y_axis_RL Transform {
+              translation 0 0.5 0
+              center 0 -0.5 0
+              children Shape {
+                appearance Appearance {
+                  material Material {
+                    emissiveColor 0 1 0
+                    diffuseColor 0 1 0
+                  }
+                }
+                geometry DEF Triad_FL_Y_0002 Cylinder {
+                  radius 0.02
+                  height 1
+                }
+              }
+            }
+            DEF Z_axis_RL Transform {
+              translation 0 0.5 0
+              scaleOrientation 1 0 0 1.5708
+              rotation 1 0 0 1.5708
+              center 0 -0.5 0
+              children Shape {
+                appearance Appearance {
+                  material Material {
+                    emissiveColor 0 0 1
+                    diffuseColor 0 0 1
+                  }
+                }
+                geometry DEF Triad_FL_Z_0003 Cylinder {
+                  radius 0.02
+                  height 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+    DEF Wheel_RR Transform {
+      translation -1.345 -0.842 0.254
+      rotation 0 1 0 0
+      children [
+        DEF Wheel_RR_rot Transform {
+          children Shape {
+            appearance Appearance {
+              texture ImageTexture {
+                url "*sl3dlib\objects\Textures\General\Checker.png" 
+              }
+            }
+            geometry Cylinder {
+              radius 0.254
+              height 0.2
+            }
+          }
+        }
+        DEF Triad_RR Transform {
+          translation 0 0 0.5
+          children [
+            DEF X_axis_RR Transform {
+              translation 0 -0.5 0
+              scaleOrientation 0 0 1 1.5708
+              rotation 0 0 1 1.5708
+              center 0 0.5 0
+              children Shape {
+                appearance Appearance {
+                  material Material {
+                    emissiveColor 1 0 0
+                    diffuseColor 1 0 0
+                  }
+                }
+                geometry DEF Triad_FL_X_0003 Cylinder {
+                  radius 0.02
+                  height 1
+                }
+              }
+            }
+            DEF Y_axis_RR Transform {
+              translation 0 0.5 0
+              center 0 -0.5 0
+              children Shape {
+                appearance Appearance {
+                  material Material {
+                    emissiveColor 0 1 0
+                    diffuseColor 0 1 0
+                  }
+                }
+                geometry DEF Triad_FL_Y_0003 Cylinder {
+                  radius 0.02
+                  height 1
+                }
+              }
+            }
+            DEF Z_axis_RR Transform {
+              translation 0 0.5 0
+              scaleOrientation 1 0 0 1.5708
+              rotation 1 0 0 1.5708
+              center 0 -0.5 0
+              children Shape {
+                appearance Appearance {
+                  material Material {
+                    emissiveColor 0 0 1
+                    diffuseColor 0 0 1
+                  }
+                }
+                geometry DEF Triad_FL_Z_0004 Cylinder {
+                  radius 0.02
+                  height 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+    DEF Top_view_camera Viewpoint {
+      description "Top view"
+      position 0 0 7
+      orientation 0 0 1 -1.5708
+    }
+    DEF Direction Transform {
+      translation 0 1 1
+      rotation 0 0 1 -1.5708
+      center 0 -1 0
+      children Shape {
+        geometry Cone {
+          bottomRadius 0.1
+        }
+      }
+    }
+    DEF Side_view Viewpoint {
+      description "Side view"
+      position 0 -4 3
+      orientation 1 0 0 1.0472
+    }
+  ]
+}
+DEF Top_view_stationary Viewpoint {
+  description "Top view stationary"
+}
